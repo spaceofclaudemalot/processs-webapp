@@ -1,0 +1,18 @@
+@import "./settings/normalize.css";
+@font-face {
+  font-family: "tiempos-regular";
+  src: url(../../assets/fonts/TiemposHeadline-Regular.otf);
+}
+@font-face {
+  font-family: "styrene-regular";
+  src: url(../../assets/fonts/StyreneB-Regular-Trial-BF63f6cbe9db1d5.otf);
+}
+@font-face {
+  font-family: "styrene-medium";
+  src: url(../../assets/fonts/StyreneB-Medium-Trial-BF63f6cc85760c2.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=styles.css.map */
