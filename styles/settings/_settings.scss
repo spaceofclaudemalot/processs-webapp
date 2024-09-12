@@ -1,31 +1,82 @@
 // ++++++++++++++++++++++ Fonts settings +++++++++++++++++++++
 @font-face {
+  font-family: "newForest-regular";
+  src: url(../../assets/fonts/NewForest-Regular.otf);
+}
+
+@font-face {
+  font-family: "newForest-italic";
+  src: url(../../assets/fonts/NewForest-Regular.otf);
+}
+
+@font-face {
   font-family: "tiempos-regular";
   src: url(../../assets/fonts/TiemposHeadline-Regular.otf);
 }
 
-@font-face {
-  font-family: "styrene-regular";
-  src: url(../../assets/fonts/StyreneB-Regular-Trial-BF63f6cbe9db1d5.otf);
-}
-
-@font-face {
-  font-family: "styrene-medium";
-  src: url(../../assets/fonts/StyreneB-Medium-Trial-BF63f6cc85760c2.otf);
-}
-
-$f-regular-font: "tiempos-regular";
-$f-link-font: "styrene-regular";
-$f-heading-font: "styrene-medium";
+$f-processs: "newForest-italic", serif;
+$f-headings: "newForest-regular", serif;
+$f-regular: "tiempos-regular", sans-serif;
 
 // +++++++++++++++++++++ Colors settings +++++++++++++++++++++
 
 $c-primary-color: teal;
 $c-secondary-color: wheat;
 $c-alert-color: rgb(149, 09, 82);
+$c-background-color: wheat;
+$c-white-process: rgb(245, 245, 245);
+$c-black-process: rgb(34, 34, 34);
 
-* {
+*,
+:hover {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  transition: height 0.34s ease-in-out, width 0.34s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $f-headings;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  max-width: 75ch;
+  padding: 5px;
+  font-size: 0.89rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button {
+  font-family: $f-regular;
+}
+
+body {
+  font-family: $f-regular;
+  background: $c-background-color;
+  cursor: none;
+  overflow: hidden;
+
+  #cursor {
+    position: absolute;
+    height: 13px;
+    aspect-ratio: 1/1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $c-white-process;
+    mix-blend-mode: exclusion;
+    // z-index: 10000;
+  }
 }
