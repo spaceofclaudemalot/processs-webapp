@@ -16,7 +16,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: height 0.34s ease-in-out, width 0.34s ease-in-out;
+}
+
+body {
+  font-family: "", sans-serif;
+  background: wheat;
+  overflow: hidden;
+  cursor: none;
+  height: 100dvh;
 }
 
 h1,
@@ -32,29 +39,25 @@ h6 {
 p {
   text-wrap: pretty;
   max-width: 75ch;
-  padding: 5px;
   font-size: 0.89rem;
 }
 
-a {
+a,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
 
 a,
+a:visited,
 button {
-  font-family: "tiempos-regular", sans-serif;
+  font-family: "", sans-serif;
+  font-weight: 600;
 }
 
-body {
-  font-family: "tiempos-regular", sans-serif;
-  background: wheat;
-  cursor: none;
-  overflow: hidden;
-}
-body #cursor {
+#cursor {
   position: absolute;
-  height: 13px;
+  height: 21px;
   aspect-ratio: 1/1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -62,28 +65,7 @@ body #cursor {
   mix-blend-mode: exclusion;
 }
 
-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 1vw;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-}
-nav .notification {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: rgb(34, 34, 34);
-}
-nav .notification i {
-  position: relative;
-}
-nav .alert::after {
+.alert::after {
   content: "";
   position: absolute;
   top: 0;
@@ -94,41 +76,82 @@ nav .alert::after {
   border-radius: 50%;
   background-color: rgb(149, 9, 82);
 }
-nav menu {
-  background-color: teal;
-  padding: 8px;
-  list-style: none;
+
+nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3vh;
-  border: none;
-  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1vw;
+  z-index: 1000;
+  max-height: 180px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+nav menu {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap: 3vh;
+  cursor: pointer;
+  color: rgb(245, 245, 245);
+  background-color: teal;
+  list-style: none;
+  border-radius: 3px;
   box-shadow: 0 0 2px rgb(34, 34, 34);
+  height: clamp(21dvh, -moz-fit-content, 55dvh);
+  height: clamp(21dvh, fit-content, 55dvh);
+  padding: 13px 8px;
+  transition: width 0.34s ease-in-out;
 }
 nav menu:hover {
   padding: 13px 8px;
 }
-nav menu:hover button .label {
-  display: block;
-  width: 10ch;
+nav menu:hover .label {
   text-align: left;
+  width: 13ch;
+  display: block;
 }
-nav menu button {
+nav menu a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 13px;
-  background: transparent;
-  border: none;
+  justify-content: center;
+  gap: 3vh;
   color: rgb(245, 245, 245);
 }
-nav menu button .label {
+nav menu a .label {
+  width: 13ch;
   display: none;
 }
 nav menu hr {
   margin: auto;
   border-radius: 50%;
   border: solid rgb(245, 245, 245) 1px;
+  scale: 2;
+}
+nav .promotion {
+  border: solid red;
+}
+
+main {
+  height: 100dvh;
+  border: solid red;
+  display: grid;
+  grid-template-areas: "planning planning" "export export";
+}
+main .planning {
+  grid-area: planning;
+  border: solid blue;
+  height: 89vh;
+}
+main .export {
+  grid-area: export;
+  border: solid green;
 }/*# sourceMappingURL=styles.css.map */

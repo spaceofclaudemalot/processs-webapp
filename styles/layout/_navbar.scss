@@ -1,83 +1,50 @@
 nav {
+  @include flex(column, center, center);
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 1vw;
   z-index: 1000;
 
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+  max-height: 180px;
 
-  .notification {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color: $c-black-process;
-
-    i {
-      position: relative;
-    }
-  }
-
-  .alert {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 100%;
-      transform: translate(-50%, -50%);
-
-      height: 8px;
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      background-color: $c-alert-color;
-    }
-  }
+  user-select: none;
 
   menu {
+    @include flex(column, left, center);
+
+    cursor: pointer;
+    color: $c-white-process;
+
     background-color: $c-primary-color;
-    padding: 8px;
     list-style: none;
+    border-radius: $radius;
+    box-shadow: $shadow;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
+    height: clamp(21dvh, fit-content, 55dvh);
 
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 2px $c-black-process;
+    padding: $padding-spacing;
+
+    transition: width 0.34s ease-in-out;
 
     &:hover {
-      padding: 13px 8px;
+      padding: $padding-spacing;
 
-      button {
-        .label {
-          display: block;
-          width: 10ch;
-          text-align: left;
-        }
+      .label {
+        text-align: left;
+        width: 13ch;
+        display: block;
       }
     }
 
-    button {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 13px;
-
-      background: transparent;
-      border: none;
+    a {
+      @include flex(row, center, center);
 
       color: $c-white-process;
 
       .label {
+        width: 13ch;
         display: none;
       }
     }
@@ -86,13 +53,12 @@ nav {
       margin: auto;
       border-radius: 50%;
       border: solid $c-white-process 1px;
+
+      scale: 2;
     }
   }
 
-  //   .promotion {
-  //     border-radius: 5px;
-  //     height: 89px;
-  //     outline: $c-primary-color solid thin;
-  //     box-shadow: 2px 3px 5px $c-primary-color;
-  //   }
+  .promotion {
+    border: solid red;
+  }
 }

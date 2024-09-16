@@ -16,43 +16,49 @@
 
   <body>
     <div id="cursor"></div>
+
     <nav>
       <div class="notification">
-        <i class="fa-solid fa-bell alert"> </i>
+        <a href="#">
+          <i class="fa-solid fa-bell"> </i>
+          <!-- <p class="label">notifications</p> -->
+        </a>
       </div>
 
       <menu>
         <li>
-          <button id="profile">
+          <a href="#">
+            <i class="fa-solid fa-add"></i>
+            <p class="label">Ajouter un enseignant</p>
+          </a>
+        </li>
+
+        <hr />
+
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-list"></i>
+            <p class="label">Liste des enseignants</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-wrench"></i>
+            <p class="label">Paramètres</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
             <i class="fa-solid fa-user"></i>
-            <a class="label" href="#">Mon profil</a>
-          </button>
-        </li>
-        <hr />
-        <li>
-          <button id="new-item">
-            <i class="fa-solid fa-plus"></i>
-            <a class="label" href="#">Ajouter un enseignant</a>
-          </button>
-        </li>
-        <hr />
-        <li>
-          <button>
-            <i class="fa-solid fa-users"></i>
-            <a class="label" href="#">Liste des enseignants</a>
-          </button>
-        </li>
-        <li>
-          <button>
-            <i class="fa-solid fa-gear"></i>
-            <a class="label" href="#">Paramètres</a>
-          </button>
+            <p class="label">Mon profil</p>
+          </a>
         </li>
       </menu>
 
       <!-- <div class="promotion">
-        <div class="alert"></div>
-        <div class="ad"></div>
+        <p>Vous utilisez <span>PROCESSS</span> gratuitement</p>
       </div> -->
     </nav>
 
@@ -62,5 +68,6 @@
     </main>
 
     <script src="./js/cursor.js"></script>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

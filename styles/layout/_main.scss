@@ -1,0 +1,21 @@
+main {
+  height: 100dvh;
+  border: solid red;
+
+  display: grid;
+  grid-template-areas:
+    "planning planning"
+    "export export";
+  //   gap: $gap-spacing;
+
+  .planning {
+    grid-area: planning;
+    border: solid blue;
+    height: 89vh;
+  }
+
+  .export {
+    grid-area: export;
+    border: solid green;
+  }
+}

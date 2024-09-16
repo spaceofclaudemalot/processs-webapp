@@ -16,7 +16,7 @@
 
 $f-processs: "newForest-italic", serif;
 $f-headings: "newForest-regular", serif;
-$f-regular: "tiempos-regular", sans-serif;
+$f-regular: "", sans-serif;
 
 // +++++++++++++++++++++ Colors settings +++++++++++++++++++++
 
@@ -27,13 +27,36 @@ $c-background-color: wheat;
 $c-white-process: rgb(245, 245, 245);
 $c-black-process: rgb(34, 34, 34);
 
+// ++++++++++++++++++++++ reset +++++++++++++++++++++
 *,
 :hover {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 
-  transition: height 0.34s ease-in-out, width 0.34s ease-in-out;
+// ++++++++++++++++++++++ Variables settings +++++++++++++++++++++
+$gap-spacing: 3vh;
+$padding-spacing: 13px 8px;
+$radius: 3px;
+$shadow: 0 0 2px $c-black-process;
+
+// ++++++++++++++++++++++ Mixins settings +++++++++++++++++++++
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap-spacing;
+}
+
+// ++++++++++++++++++++++ General settings +++++++++++++++++++++
+body {
+  font-family: $f-regular;
+  background: $c-background-color;
+  overflow: hidden;
+  cursor: none;
+  height: 100dvh;
 }
 
 h1,
@@ -49,34 +72,44 @@ h6 {
 p {
   text-wrap: pretty;
   max-width: 75ch;
-  padding: 5px;
   font-size: 0.89rem;
 }
 
-a {
+a,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
 
 a,
+a:visited,
 button {
   font-family: $f-regular;
+  font-weight: 600;
 }
 
-body {
-  font-family: $f-regular;
-  background: $c-background-color;
-  cursor: none;
-  overflow: hidden;
+#cursor {
+  position: absolute;
+  height: 21px;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: $c-white-process;
+  mix-blend-mode: exclusion;
+  // z-index: 1000;
+}
 
-  #cursor {
+.alert {
+  &::after {
+    content: "";
     position: absolute;
-    height: 13px;
-    aspect-ratio: 1/1;
+    top: 0;
+    left: 100%;
     transform: translate(-50%, -50%);
+
+    height: 8px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: $c-white-process;
-    mix-blend-mode: exclusion;
-    // z-index: 10000;
+    background-color: $c-alert-color;
   }
 }

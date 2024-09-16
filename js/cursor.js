@@ -1,6 +1,4 @@
-const cursor = document.getElementById("cursor");
-const buttons = document.getElementsByTagName("button");
-console.log(buttons);
+const buttons = document.querySelectorAll("menu a");
 
 // Moving pointer
 window.addEventListener("mousemove", (e) => {
@@ -8,13 +6,15 @@ window.addEventListener("mousemove", (e) => {
   cursor.style.top = e.pageY + "px";
 });
 
-// Interaction with buttons
-buttons.forEach((btn) => {
-  btn.addEventListener("mouseover", () => {
-    cursor.style.height = "800px";
-  });
+// // Interaction with buttons
+// buttons.forEach((btn) => {
+//   btn.addEventListener("mouseover", (e) => {
+//     cursor.style.height = "fit-content";
+//     cursor.innerHTML = btn.querySelector(".label").textContent;
+//   });
 
-  btn.addEventListener("mouseout", () => {
-    cursor.style.height = "21px";
-  });
-});
+//   btn.addEventListener("mouseout", (e) => {
+//     cursor.style.height = "21px";
+//     cursor.innerHTML = "";
+//   });
+// });
