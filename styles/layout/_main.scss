@@ -1,21 +1,55 @@
 main {
+  @include flex(column, center, center);
   height: 100dvh;
-  border: solid red;
+  padding: $gap-spacing;
 
-  display: grid;
-  grid-template-areas:
-    "planning planning"
-    "export export";
-  //   gap: $gap-spacing;
+  //   position: relative;
 
-  .planning {
-    grid-area: planning;
-    border: solid blue;
-    height: 89vh;
+  #planning {
+    @include round-corner;
+    background: $c-white-process;
+    height: 89dvh;
+    width: 100%;
+
+    margin: auto;
+    box-shadow: $shadow;
   }
 
-  .export {
-    grid-area: export;
-    border: solid green;
+  #tools {
+    @include flex(row, center, space-evenly);
+    @include round-corner;
+    background: $c-primary-color;
+    padding: $padding-spacing;
+    min-height: 1rem;
+
+    color: $c-white-process;
+    box-shadow: $shadow;
+
+    position: absolute;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    bottom: 8px;
+    width: 150px;
+
+    transition: all 0.55s ease-in-out;
+
+    li {
+      display: none;
+      a {
+        @include flex(column, center, center);
+        gap: $gap-spacing / 3;
+        text-align: center;
+      }
+    }
+
+    &.active-toolbar {
+      bottom: 13%;
+      width: fit-content;
+
+      li {
+        display: inline;
+        width: 18ch;
+      }
+    }
   }
 }

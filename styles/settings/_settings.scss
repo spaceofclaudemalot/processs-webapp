@@ -28,18 +28,18 @@ $c-white-process: rgb(245, 245, 245);
 $c-black-process: rgb(34, 34, 34);
 
 // ++++++++++++++++++++++ reset +++++++++++++++++++++
-*,
-:hover {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 // ++++++++++++++++++++++ Variables settings +++++++++++++++++++++
-$gap-spacing: 3vh;
+$gap-spacing: 3dvh;
 $padding-spacing: 13px 8px;
-$radius: 3px;
-$shadow: 0 0 2px $c-black-process;
+$radius: 5px;
+$shadow: 2px 0px 37px -13px $c-black-process;
 
 // ++++++++++++++++++++++ Mixins settings +++++++++++++++++++++
 @mixin flex($direction, $align, $justify) {
@@ -48,6 +48,10 @@ $shadow: 0 0 2px $c-black-process;
   align-items: $align;
   justify-content: $justify;
   gap: $gap-spacing;
+}
+
+@mixin round-corner {
+  border-radius: $radius;
 }
 
 // ++++++++++++++++++++++ General settings +++++++++++++++++++++
@@ -69,7 +73,9 @@ h6 {
   text-wrap: balance;
 }
 
-p {
+p,
+li,
+a {
   text-wrap: pretty;
   max-width: 75ch;
   font-size: 0.89rem;
@@ -79,6 +85,7 @@ a,
 a:visited {
   color: inherit;
   text-decoration: none;
+  z-index: 100;
 }
 
 a,
@@ -86,17 +93,20 @@ a:visited,
 button {
   font-family: $f-regular;
   font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #cursor {
   position: absolute;
-  height: 21px;
+  height: 13px;
   aspect-ratio: 1/1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: $c-white-process;
   mix-blend-mode: exclusion;
-  // z-index: 1000;
 }
 
 .alert {
