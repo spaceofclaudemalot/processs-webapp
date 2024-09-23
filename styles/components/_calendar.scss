@@ -1,57 +1,64 @@
 #calendar {
   padding: $padding;
   width: 89%;
-}
-#month-navigation {
-  @include flex(row, center, center);
-  margin-bottom: 10px;
-}
-#month-year {
-  text-align: center;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.nav-btn {
-  background-color: $c-primary-color;
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: $padding;
-  border-radius: $radius;
-  cursor: pointer;
-}
-#today-btn {
-  display: block;
-  margin: 10px auto;
-  background-color: $c-primary-color;
-  color: white;
-  border: none;
-  padding: $padding;
-  border-radius: $radius;
-  cursor: pointer;
-}
-.weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-}
-.day {
-  border-radius: $radius;
-  padding: 3px;
-}
-.today {
-  color: $c-white-process;
-  background: $c-alert-color;
-  position: relative;
-  font-weight: bold;
-}
-.other-month {
-  color: #ccc;
+
+  #month-navigation {
+    @include flex(row, center, center);
+    margin-bottom: 10px;
+
+    #month-year {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .nav-btn {
+      background-color: $c-primary-color;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: $padding;
+      border-radius: $radius;
+      cursor: pointer;
+    }
+  }
+
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+
+    .day {
+      border-radius: $radius;
+      padding: 3px;
+    }
+    .today {
+      color: $c-white-process;
+      background: $c-alert-color;
+      position: relative;
+      font-weight: bold;
+    }
+    .other-month {
+      color: #ccc;
+    }
+  }
+
+  #today-btn {
+    display: block;
+    margin: 10px auto;
+    background-color: $c-primary-color;
+    color: white;
+    border: none;
+    padding: $padding;
+    border-radius: $radius;
+    cursor: pointer;
+  }
 }

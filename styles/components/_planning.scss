@@ -1,0 +1,17 @@
+#planning {
+  //   border: solid red;
+  @include flex(column, center, flex-start);
+
+  .planning__container {
+    // border: solid green;
+    height: clamp(300px, fit-content, 100%);
+    width: 100%;
+    @include flex(column, left, space-evenly);
+
+    &__weekdays {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      font-weight: bold;
+    }
+  }
+}

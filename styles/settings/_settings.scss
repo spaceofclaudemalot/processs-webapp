@@ -59,6 +59,7 @@ body {
   overflow: hidden;
   cursor: none;
   height: 100dvh;
+  color: auto;
 }
 
 h1,
@@ -71,6 +72,8 @@ h6 {
   letter-spacing: 1px;
   text-wrap: balance;
   font-size: 1.3rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 p,
@@ -104,7 +107,7 @@ button {
   transition: 0.01s ease-in-out;
 }
 #mouse1 {
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
   color: $c-black-process;
   transition: 0.13s ease-in-out;
   transform: translateX(21px);
@@ -131,6 +134,8 @@ button {
   height: fit-content;
   border-radius: $radius;
   background: $c-white-process;
+  border: solid $c-primary-color thin;
+  filter: drop-shadow(0 0 1px);
 }
 
 .teasing {
@@ -148,8 +153,23 @@ button {
 
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 89%;
+    z-index: 1000;
 
-    filter: drop-shadow(0 0 3px $c-alert-color) opacity(0.89);
+    filter: drop-shadow(0 0 3px $c-alert-color);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: grey;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0.89;
+    border-radius: $radius;
   }
 }

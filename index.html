@@ -106,15 +106,44 @@
               </span>
             </a>
           </li>
+          <li class="navbar__options__item">
+            <a href="#">
+              <i class="fa-solid fa-comment"></i>
+              <span class="navbar__options__item__tag">
+                <h4>Laisser un avis</h4>
+                <p>
+                  Vos commentaires et suggestions sont importants pour nous. Ils
+                  sont donc les bienvenus et restes anonymes
+                </p>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
 
-    <main class="planning">
-      <div class="planning__container"></div>
+    <main id="planning">
+      <div class="planning__container">
+        <h2>Planning des cours</h2>
+
+        <div class="planning__container__weekdays">
+          <div>&nbsp;</div>
+          <div>Dimanche</div>
+          <div>Lundi</div>
+          <div>Mardi</div>
+          <div>Mercredi</div>
+          <div>Jeudi</div>
+          <div>Vendredi</div>
+          <div>Samedi</div>
+        </div>
+        <div class="course-hours"></div>
+      </div>
     </main>
-    <aside class="agenda">
+
+    <aside id="agenda" class="teasing">
+      <h2>Agenda</h2>
       <div id="calendar">
+        <h3>Calendrier</h3>
         <div id="month-navigation">
           <button id="prev-month" class="nav-btn">&lt;</button>
           <div id="month-year"></div>
@@ -132,7 +161,9 @@
         <div class="days"></div>
         <button id="today-btn">Revenir à la date du jour</button>
       </div>
-      <div class="dates teasing">Dates importantes à venir</div>
+      <div id="dates" class="">
+        <h3>Dates importantes</h3>
+      </div>
     </aside>
 
     <script src="./js/cursor.js"></script>
