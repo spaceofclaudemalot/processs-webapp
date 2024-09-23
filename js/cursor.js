@@ -1,20 +1,8 @@
-const buttons = document.querySelectorAll("menu a");
-
 // Moving pointer
+const mouses = document.querySelectorAll(".mouse");
 window.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
+  mouses.forEach((mouse) => {
+    mouse.style.top = `${e.pageY}px`;
+    mouse.style.left = `${e.pageX}px`;
+  });
 });
-
-// // Interaction with buttons
-// buttons.forEach((btn) => {
-//   btn.addEventListener("mouseover", (e) => {
-//     cursor.style.height = "fit-content";
-//     cursor.innerHTML = btn.querySelector(".label").textContent;
-//   });
-
-//   btn.addEventListener("mouseout", (e) => {
-//     cursor.style.height = "21px";
-//     cursor.innerHTML = "";
-//   });
-// });

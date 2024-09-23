@@ -3,5 +3,9 @@
 @import "./settings/settings";
 
 // importing layout style files
-@import "./layout/navbar";
-@import "./layout/main";
+@import "./layouts/main";
+
+// importing components
+@import "./components/logo";
+@import "./components/navbar";
+@import "./components/calendar";

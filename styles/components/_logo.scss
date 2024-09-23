@@ -1,0 +1,16 @@
+.header {
+  position: absolute;
+  top: 1dvh;
+  left: 1dvw;
+  width: 89%;
+
+  &__logo {
+    font-family: $f-processs;
+    color: $c-primary-color;
+    font-weight: bold;
+
+    a {
+      font-size: 2.1rem;
+    }
+  }
+}

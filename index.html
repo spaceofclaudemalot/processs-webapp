@@ -15,81 +15,129 @@
   </head>
 
   <body>
-    <div id="cursor"></div>
+    <span class="mouse" id="cursor"></span>
+    <span class="mouse" id="mouse1"></span>
 
-    <nav>
-      <div class="notification">
-        <a href="#">
-          <i class="fa-solid fa-bell"> </i>
-          <!-- <p class="label">notifications</p> -->
-        </a>
+    <header class="header">
+      <div class="header__logo">
+        <a href="">Processs</a>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <!-- notifications section -->
+      <div class="navbar__notifications">
+        <ul class="navbar__notifications__container">
+          <li class="navbar__notifications__item">
+            <a href="#">
+              <i class="fa-solid fa-bell"></i>
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <menu>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-add"></i>
-            <p class="label">Ajouter un enseignant</p>
-          </a>
-        </li>
+      <!-- tools features section -->
+      <div class="navbar__tools">
+        <ul class="navbar__tools__container">
+          <li class="navbar__tools__item">
+            <a href="#">
+              <i class="fa-solid fa-add"></i>
+              <span class="navbar__tools__item__tag">
+                <h4>Ajouter un nouvel enseignant</h4>
+                <p>
+                  Pour ajouter toutes les informations utiles relatives à la
+                  disponibitilité, aux matières et aux moyens de contact d'un
+                  nouvel enseignant dans votre planification.
+                </p>
+              </span>
+            </a>
+          </li>
 
-        <hr />
+          <li class="navbar__tools__item">
+            <a href="#">
+              <i class="fa-solid fa-share"></i>
+              <span class="navbar__tools__item__tag">
+                <h4>Partager les plannings</h4>
+                <p>
+                  Imprimer les plannings des cours ou envoyer les aux
+                  enseignants concernés
+                </p>
+              </span>
+            </a>
+          </li>
 
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-list"></i>
-            <p class="label">Liste des enseignants</p>
-          </a>
-        </li>
+          <li class="navbar__tools__item">
+            <a href="#">
+              <i class="fa-solid fa-list"></i>
+              <span class="navbar__tools__item__tag">
+                <h4>Tous les enseignants</h4>
+                <p>
+                  Retrouver la liste de tous les enseignants enregistrés dans
+                  l'un de vos plannings.
+                </p>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-wrench"></i>
-            <p class="label">Paramètres</p>
-          </a>
-        </li>
+      <!-- options section -->
+      <div class="navbar__options">
+        <ul class="navbar__options__container">
+          <li class="navbar__options__item">
+            <a href="#">
+              <i class="fa-solid fa-user"></i>
+              <span class="navbar__options__item__tag">
+                <h4>Mon Compte</h4>
+                <p>Option bientôt disponible</p>
+              </span>
+            </a>
+          </li>
 
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-user"></i>
-            <p class="label">Mon profil</p>
-          </a>
-        </li>
-      </menu>
-
-      <!-- <div class="promotion">
-        <p>Vous utilisez <span>PROCESSS</span> gratuitement</p>
-      </div> -->
+          <li class="navbar__options__item">
+            <a href="#">
+              <i class="fa-solid fa-wrench"></i>
+              <span class="navbar__options__item__tag">
+                <h4>Paramètres</h4>
+                <p>
+                  Pour gérer l'organisation des cours de votre établissement
+                  scolaire
+                </p>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <main>
-      <section id="planning"></section>
-      <menu id="tools" class="active-toolbar">
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-calendar"></i>
-            <p>Exporter tous les calendriers</p>
-          </a>
-        </li>
-
-        <!-- <li>
-          <a href="#">
-            <i class="fa-solid fa-print"></i>
-            <p>Imprimer les calendriers</p>
-          </a>
-        </li> -->
-        <!-- 
-        <li>
-          <a href="#">
-            <i class="fa-brands fa-whatsapp"></i>
-            <p>Partager sur whatsapp</p>
-          </a>
-        </li> -->
-      </menu>
+    <main class="planning">
+      <div class="planning__container"></div>
     </main>
+    <aside class="agenda">
+      <div id="calendar">
+        <div id="month-navigation">
+          <button id="prev-month" class="nav-btn">&lt;</button>
+          <button id="next-month" class="nav-btn">&gt;</button>
+          <div id="month-year"></div>
+        </div>
+        <div class="weekdays">
+          <div>Dim</div>
+          <div>Lun</div>
+          <div>Mar</div>
+          <div>Mer</div>
+          <div>Jeu</div>
+          <div>Ven</div>
+          <div>Sam</div>
+        </div>
+        <div class="days"></div>
+        <button id="today-btn">Aujourd'hui</button>
+      </div>
+      <div class="dates"></div>
+    </aside>
 
     <script src="./js/cursor.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/calendar.js"></script>
   </body>
 </html>

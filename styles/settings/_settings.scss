@@ -27,19 +27,21 @@ $c-background-color: wheat;
 $c-white-process: rgb(245, 245, 245);
 $c-black-process: rgb(34, 34, 34);
 
+// ++++++++++++++++++++++ Variables settings +++++++++++++++++++++
+$gap-spacing: 1rem;
+$padding: 13px 8px;
+$radius: 5px;
+
 // ++++++++++++++++++++++ reset +++++++++++++++++++++
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-}
+  text-decoration: none;
 
-// ++++++++++++++++++++++ Variables settings +++++++++++++++++++++
-$gap-spacing: 3dvh;
-$padding-spacing: 13px 8px;
-$radius: 5px;
-$shadow: 2px 0px 37px -13px $c-black-process;
+  border-radius: $radius;
+}
 
 // ++++++++++++++++++++++ Mixins settings +++++++++++++++++++++
 @mixin flex($direction, $align, $justify) {
@@ -48,10 +50,6 @@ $shadow: 2px 0px 37px -13px $c-black-process;
   align-items: $align;
   justify-content: $justify;
   gap: $gap-spacing;
-}
-
-@mixin round-corner {
-  border-radius: $radius;
 }
 
 // ++++++++++++++++++++++ General settings +++++++++++++++++++++
@@ -70,7 +68,9 @@ h4,
 h5,
 h6 {
   font-family: $f-headings;
+  letter-spacing: 1px;
   text-wrap: balance;
+  font-size: 1.3rem;
 }
 
 p,
@@ -78,35 +78,36 @@ li,
 a {
   text-wrap: pretty;
   max-width: 75ch;
-  font-size: 0.89rem;
-}
-
-a,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-  z-index: 100;
+  font-size: 1rem;
 }
 
 a,
 a:visited,
 button {
-  font-family: $f-regular;
-  font-weight: 600;
+  color: inherit;
+  transition: 0.21s ease-in-out;
+  position: relative;
+  z-index: 100;
+}
 
-  &:hover {
-    cursor: pointer;
-  }
+.mouse {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: exclusion;
 }
 
 #cursor {
-  position: absolute;
-  height: 13px;
+  width: 13px;
   aspect-ratio: 1/1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: $c-white-process;
-  mix-blend-mode: exclusion;
+  border-radius: 100%;
+  background: $c-white-process;
+  transition: 0.01s ease-in-out;
+}
+#mouse1 {
+  mix-blend-mode: multiply;
+  color: $c-black-process;
+  transition: 0.13s ease-in-out;
+  transform: translateX(21px);
 }
 
 .alert {
@@ -122,4 +123,12 @@ button {
     border-radius: 50%;
     background-color: $c-alert-color;
   }
+}
+
+.help-on-hover {
+  padding: $padding;
+  width: 34ch;
+  height: fit-content;
+  border-radius: $radius;
+  background: $c-white-process;
 }

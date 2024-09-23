@@ -1,0 +1,24 @@
+body {
+  & > *:not(span, nav, .header) {
+    background: $c-white-process;
+    color: $c-black-process;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $c-alert-color;
+    }
+  }
+
+  @include flex(row, center, center);
+  padding: $padding;
+
+  main {
+    width: 70dvw;
+    height: 89dvh;
+  }
+
+  aside {
+    width: 30dvw;
+    height: clamp(300px, fit-content, 100%);
+    @include flex(column, center, center);
+  }
+}

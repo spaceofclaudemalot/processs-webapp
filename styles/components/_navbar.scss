@@ -1,0 +1,53 @@
+.navbar {
+  @include flex(column, center, center);
+
+  position: absolute;
+  top: 50dvh;
+  transform: translateY(-50%);
+  left: 1dvw;
+
+  user-select: none;
+  cursor: pointer;
+
+  // border: solid red;
+
+  &__tools,
+  &__options {
+    position: relative;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &__tools__container,
+  &__options__container {
+    @include flex(column, center, center);
+
+    background: $c-primary-color;
+    padding: $padding;
+
+    color: $c-white-process;
+  }
+
+  .navbar__notifications__item,
+  .navbar__tools__item,
+  .navbar__options__item {
+    &:hover {
+      @include flex(column, center, center);
+
+      scale: 1.3;
+    }
+  }
+}
+
+.navbar__tools__item__tag,
+.navbar__options__item__tag {
+  h4,
+  p {
+    display: none;
+
+    text-wrap: pretty;
+    max-width: 75ch;
+  }
+}
