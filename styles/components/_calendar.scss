@@ -1,13 +1,9 @@
 #calendar {
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 300px;
-  width: 100%;
+  padding: $padding;
+  width: 89%;
 }
 #month-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, center, center);
   margin-bottom: 10px;
 }
 #month-year {
@@ -16,28 +12,27 @@
   font-weight: bold;
 }
 .nav-btn {
-  background-color: #007bff;
+  background-color: $c-primary-color;
   color: white;
   font-weight: bold;
   border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: $padding;
+  border-radius: $radius;
   cursor: pointer;
 }
 #today-btn {
   display: block;
   margin: 10px auto;
-  background-color: #28a745;
+  background-color: $c-primary-color;
   color: white;
   border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: $padding;
+  border-radius: $radius;
   cursor: pointer;
 }
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
@@ -45,16 +40,17 @@
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
   text-align: center;
 }
 .day {
-  padding: 5px;
-  border-radius: 50%;
+  border-radius: $radius;
+  padding: 3px;
 }
 .today {
-  background-color: #007bff;
-  color: white;
+  color: $c-white-process;
+  background: $c-alert-color;
+  position: relative;
+  font-weight: bold;
 }
 .other-month {
   color: #ccc;

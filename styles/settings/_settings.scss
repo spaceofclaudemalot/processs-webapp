@@ -132,3 +132,24 @@ button {
   border-radius: $radius;
   background: $c-white-process;
 }
+
+.teasing {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "Bientôt disponible";
+    text-align: center;
+
+    background-color: $c-alert-color;
+    padding: $padding;
+    color: $c-white-process;
+    border-radius: $radius;
+
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+
+    filter: drop-shadow(0 0 3px $c-alert-color) opacity(0.89);
+  }
+}

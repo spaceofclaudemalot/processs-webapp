@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "./settings/normalize.css";
 @font-face {
   font-family: "newForest-regular";
@@ -99,6 +100,23 @@ button {
   background: rgb(245, 245, 245);
 }
 
+.teasing {
+  position: relative;
+}
+.teasing:before {
+  position: absolute;
+  content: "Bientôt disponible";
+  text-align: center;
+  background-color: rgb(149, 9, 82);
+  padding: 13px 8px;
+  color: rgb(245, 245, 245);
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  filter: drop-shadow(0 0 3px rgb(149, 9, 82)) opacity(0.89);
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -110,9 +128,6 @@ body {
 body > *:not(span, nav, .header) {
   background: rgb(245, 245, 245);
   color: rgb(34, 34, 34);
-}
-body > *:not(span, nav, .header):hover {
-  box-shadow: inset 0 0 0 1px rgb(149, 9, 82);
 }
 body main {
   width: 70dvw;
@@ -142,6 +157,9 @@ body aside {
 }
 .header__logo a {
   font-size: 2.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .navbar {
@@ -196,16 +214,16 @@ body aside {
 }
 
 #calendar {
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 300px;
-  width: 100%;
+  padding: 13px 8px;
+  width: 89%;
 }
 
 #month-navigation {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 10px;
 }
 
@@ -216,11 +234,11 @@ body aside {
 }
 
 .nav-btn {
-  background-color: #007bff;
+  background-color: teal;
   color: white;
   font-weight: bold;
   border: none;
-  padding: 5px 10px;
+  padding: 13px 8px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -228,10 +246,10 @@ body aside {
 #today-btn {
   display: block;
   margin: 10px auto;
-  background-color: #28a745;
+  background-color: teal;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 13px 8px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -239,7 +257,6 @@ body aside {
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
@@ -248,18 +265,19 @@ body aside {
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
   text-align: center;
 }
 
 .day {
-  padding: 5px;
-  border-radius: 50%;
+  border-radius: 5px;
+  padding: 3px;
 }
 
 .today {
-  background-color: #007bff;
-  color: white;
+  color: rgb(245, 245, 245);
+  background: rgb(149, 9, 82);
+  position: relative;
+  font-weight: bold;
 }
 
 .other-month {
