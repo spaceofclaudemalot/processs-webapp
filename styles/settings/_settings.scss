@@ -128,6 +128,28 @@ button {
   }
 }
 
+.popup-page {
+  cursor: auto;
+
+  // display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+
+  border: solid $c-primary-color thin;
+  padding: $padding;
+  border-radius: $radius;
+  background: $c-white-process;
+  filter: drop-shadow(0 0 1px);
+
+  height: 89dvh;
+  width: 89dvw;
+
+  overflow-y: scroll;
+}
+
 .help-on-hover {
   padding: $padding;
   width: 34ch;
@@ -172,4 +194,12 @@ button {
     opacity: 0.89;
     border-radius: $radius;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }

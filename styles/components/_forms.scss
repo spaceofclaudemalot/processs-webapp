@@ -1,0 +1,41 @@
+form {
+  border: solid $c-primary-color thin;
+  padding: $padding;
+  border-radius: $radius;
+
+  //   border: solid red;
+  @include flex(row, flex-start, space-evenly);
+
+  .infos-teacher__left,
+  .infos-teacher__right,
+  .infos-teacher__disponibility {
+    // border: solid green;
+    padding: $padding;
+
+    & > div {
+      margin: 2rem 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.55rem;
+    }
+
+    input,
+    select {
+      border: none;
+      width: 34ch;
+      height: 3rem;
+      padding: $padding;
+
+      &[type="checkbox"] {
+        accent-color: $c-primary-color;
+        height: 1rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

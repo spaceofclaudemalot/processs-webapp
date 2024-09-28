@@ -94,6 +94,23 @@ button {
   background-color: rgb(149, 9, 82);
 }
 
+.popup-page {
+  cursor: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  border: solid teal thin;
+  padding: 13px 8px;
+  border-radius: 5px;
+  background: rgb(245, 245, 245);
+  filter: drop-shadow(0 0 1px);
+  height: 89dvh;
+  width: 89dvw;
+  overflow-y: scroll;
+}
+
 .help-on-hover {
   padding: 13px 8px;
   width: 34ch;
@@ -133,6 +150,14 @@ button {
   z-index: 100;
   opacity: 0.89;
   border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 body {
@@ -199,9 +224,12 @@ body aside {
 }
 .navbar__tools, .navbar__options {
   position: relative;
+  transition: all 0.13s ease-in-out;
+  opacity: 0.89;
 }
 .navbar__tools:hover, .navbar__options:hover {
   scale: 1.1;
+  opacity: 1;
 }
 .navbar__tools__container, .navbar__options__container {
   display: flex;
@@ -209,9 +237,16 @@ body aside {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  gap: 0;
   background: teal;
   padding: 13px 8px;
   color: rgb(245, 245, 245);
+}
+.navbar .navbar__notifications__item,
+.navbar .navbar__tools__item,
+.navbar .navbar__options__item {
+  height: 2rem;
+  transition: all 0.13s ease-in-out;
 }
 .navbar .navbar__notifications__item:hover,
 .navbar .navbar__tools__item:hover,
@@ -231,6 +266,61 @@ body aside {
   display: none;
   text-wrap: pretty;
   max-width: 75ch;
+}
+
+form {
+  border: solid teal thin;
+  padding: 13px 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+form .infos-teacher__left,
+form .infos-teacher__right,
+form .infos-teacher__disponibility {
+  padding: 13px 8px;
+}
+form .infos-teacher__left > div,
+form .infos-teacher__right > div,
+form .infos-teacher__disponibility > div {
+  margin: 2rem 0;
+}
+form .infos-teacher__left label,
+form .infos-teacher__right label,
+form .infos-teacher__disponibility label {
+  display: block;
+  margin-bottom: 0.55rem;
+}
+form .infos-teacher__left input,
+form .infos-teacher__left select,
+form .infos-teacher__right input,
+form .infos-teacher__right select,
+form .infos-teacher__disponibility input,
+form .infos-teacher__disponibility select {
+  border: none;
+  width: 34ch;
+  height: 3rem;
+  padding: 13px 8px;
+}
+form .infos-teacher__left input[type=checkbox],
+form .infos-teacher__left select[type=checkbox],
+form .infos-teacher__right input[type=checkbox],
+form .infos-teacher__right select[type=checkbox],
+form .infos-teacher__disponibility input[type=checkbox],
+form .infos-teacher__disponibility select[type=checkbox] {
+  accent-color: teal;
+  height: 1rem;
+}
+form .infos-teacher__left input:focus,
+form .infos-teacher__left select:focus,
+form .infos-teacher__right input:focus,
+form .infos-teacher__right select:focus,
+form .infos-teacher__disponibility input:focus,
+form .infos-teacher__disponibility select:focus {
+  outline: none;
 }
 
 #planning {
