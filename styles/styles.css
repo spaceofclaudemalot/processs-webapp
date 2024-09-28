@@ -102,13 +102,41 @@ button {
   transform: translate(-50%, -50%);
   z-index: 2000;
   border: solid teal thin;
-  padding: 13px 8px;
-  border-radius: 5px;
-  background: rgb(245, 245, 245);
-  filter: drop-shadow(0 0 1px);
+  filter: drop-shadow(0 0 1000px);
   height: 89dvh;
   width: 89dvw;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+.popup-page__container {
+  padding: 13px 8px;
+}
+.popup-page__container__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.popup-page__container__header__close {
+  font-size: 2rem;
+  filter: opacity(0.55);
+  width: 2rem;
+  text-align: center;
+}
+.popup-page__container__header__close:hover {
+  color: rgb(149, 9, 82);
+  filter: opacity(1);
+  border: solid rgb(149, 9, 82) 1px;
+}
+.popup-page__container__header__close:hover:before {
+  content: "Fermer";
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  color: rgb(149, 9, 82);
+  top: 50%;
+  right: 8ch;
+  transform: translate(50%, -50%);
 }
 
 .help-on-hover {
@@ -116,7 +144,6 @@ button {
   width: 34ch;
   height: -moz-fit-content;
   height: fit-content;
-  border-radius: 5px;
   background: rgb(245, 245, 245);
   border: solid teal thin;
   filter: drop-shadow(0 0 1px);
@@ -269,58 +296,29 @@ body aside {
 }
 
 form {
-  border: solid teal thin;
+  border: solid red;
   padding: 13px 8px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
 }
-form .infos-teacher__left,
-form .infos-teacher__right,
-form .infos-teacher__disponibility {
-  padding: 13px 8px;
+form > * {
+  border: solid;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-form .infos-teacher__left > div,
-form .infos-teacher__right > div,
-form .infos-teacher__disponibility > div {
-  margin: 2rem 0;
+form .infos-teacher__left > div {
+  display: grid;
+  gap: 1rem;
+  border: solid red;
 }
-form .infos-teacher__left label,
-form .infos-teacher__right label,
-form .infos-teacher__disponibility label {
-  display: block;
-  margin-bottom: 0.55rem;
-}
-form .infos-teacher__left input,
-form .infos-teacher__left select,
-form .infos-teacher__right input,
-form .infos-teacher__right select,
-form .infos-teacher__disponibility input,
-form .infos-teacher__disponibility select {
-  border: none;
+form .infos-teacher__left input {
   width: 34ch;
-  height: 3rem;
-  padding: 13px 8px;
-}
-form .infos-teacher__left input[type=checkbox],
-form .infos-teacher__left select[type=checkbox],
-form .infos-teacher__right input[type=checkbox],
-form .infos-teacher__right select[type=checkbox],
-form .infos-teacher__disponibility input[type=checkbox],
-form .infos-teacher__disponibility select[type=checkbox] {
-  accent-color: teal;
   height: 1rem;
 }
-form .infos-teacher__left input:focus,
-form .infos-teacher__left select:focus,
-form .infos-teacher__right input:focus,
-form .infos-teacher__right select:focus,
-form .infos-teacher__disponibility input:focus,
-form .infos-teacher__disponibility select:focus {
-  outline: none;
+form .infos-teacher__disponibility {
+  grid-column: 1/-1;
 }
 
 #planning {

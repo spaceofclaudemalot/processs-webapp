@@ -8,7 +8,7 @@ const subjects = [
   "Histoire-Géographie",
   "Instruction civique",
   "Philosophie",
-  "économie",
+  "Économie",
   "EPS",
   "Dessin",
   "Informatique",

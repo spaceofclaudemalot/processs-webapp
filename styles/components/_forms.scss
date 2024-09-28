@@ -1,41 +1,35 @@
 form {
-  border: solid $c-primary-color thin;
+  border: solid red;
   padding: $padding;
-  border-radius: $radius;
 
-  //   border: solid red;
-  @include flex(row, flex-start, space-evenly);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: $gap-spacing;
 
-  .infos-teacher__left,
-  .infos-teacher__right,
-  .infos-teacher__disponibility {
-    // border: solid green;
-    padding: $padding;
+  & > * {
+    border: solid;
+    height: fit-content;
+  }
 
+  .infos-teacher__left
+  /* .infos-teacher__right, */
+  /* .infos-teacher__disponibility */ {
     & > div {
-      margin: 2rem 0;
-    }
+      display: grid;
+      gap: $gap-spacing;
 
-    label {
-      display: block;
-      margin-bottom: 0.55rem;
+      border: solid red;
     }
+  }
 
-    input,
-    select {
-      border: none;
+  .infos-teacher__left {
+    input {
       width: 34ch;
-      height: 3rem;
-      padding: $padding;
-
-      &[type="checkbox"] {
-        accent-color: $c-primary-color;
-        height: 1rem;
-      }
-
-      &:focus {
-        outline: none;
-      }
+      height: 1rem;
     }
+  }
+  .infos-teacher__disponibility {
+    grid-column: 1 / -1;
   }
 }

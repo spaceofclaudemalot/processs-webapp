@@ -124,13 +124,18 @@
 
     <!-- popups -->
     <div id="new-teacher" class="popup-page hidden">
-      <div class="popup-menu__container">
-        <h2>Ajouter un enseignant</h2>
+      <div class="popup-page__container">
+        <header class="popup-page__container__header">
+          <h2>Ajouter un enseignant</h2>
+          <a class="popup-page__container__header__close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </header>
 
         <form action="" id="infos-teacher">
           <div class="infos-teacher__left">
             <h3>Identification de l'enseignant</h3>
-            <div>
+            <div class="infos-teacher__left__item">
               <label for="gender">Genre :</label>
               <select name="gender" id="gender">
                 <option value="male">Homme</option>
@@ -144,7 +149,6 @@
                 type="text"
                 id="last-name"
                 placeholder="Saisir  le nom de famille "
-                autofocus
                 required
               />
             </div>
@@ -175,7 +179,7 @@
           </div>
 
           <div class="infos-teacher__right">
-            <h3>Information de cours</h3>
+            <h3>Information pédagogique</h3>
             <div>
               <label for="subject1">Matière dispensée 1</label>
               <select name="" id="subject1"></select>
@@ -191,7 +195,7 @@
           </div>
 
           <div class="infos-teacher__disponibility">
-            <h3>Disponibitilité de l'enseignant</h3>
+            <h3>Disponibilité de l'enseignant</h3>
           </div>
         </form>
       </div>

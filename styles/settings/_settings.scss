@@ -139,22 +139,50 @@ button {
   z-index: 2000;
 
   border: solid $c-primary-color thin;
-  padding: $padding;
-  border-radius: $radius;
-  background: $c-white-process;
-  filter: drop-shadow(0 0 1px);
+  filter: drop-shadow(0 0 1000px);
 
   height: 89dvh;
   width: 89dvw;
 
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  &__container {
+    padding: $padding;
+
+    &__header {
+      @include flex(row, center, center);
+
+      &__close {
+        font-size: 2rem;
+        filter: opacity(0.55);
+        width: 2rem;
+        text-align: center;
+
+        &:hover {
+          color: $c-alert-color;
+          filter: opacity(1);
+          border: solid $c-alert-color 1px;
+
+          &:before {
+            content: "Fermer";
+            font-weight: bold;
+            font-size: 1rem;
+            position: absolute;
+            color: $c-alert-color;
+            top: 50%;
+            right: 8ch;
+            transform: translate(50%, -50%);
+          }
+        }
+      }
+    }
+  }
 }
 
 .help-on-hover {
   padding: $padding;
   width: 34ch;
   height: fit-content;
-  border-radius: $radius;
   background: $c-white-process;
   border: solid $c-primary-color thin;
   filter: drop-shadow(0 0 1px);
