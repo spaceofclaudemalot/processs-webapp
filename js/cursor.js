@@ -6,3 +6,4 @@ window.addEventListener("mousemove", (e) => {
     mouse.style.left = `${e.pageX}px`;
   });
 });
+

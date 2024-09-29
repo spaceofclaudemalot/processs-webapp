@@ -29,7 +29,7 @@
       <div class="navbar__notifications">
         <ul class="navbar__notifications__container">
           <li class="navbar__notifications__item">
-            <a href="#">
+            <a>
               <i class="fa-solid fa-bell"></i>
             </a>
           </li>
@@ -39,8 +39,8 @@
       <!-- tools features section -->
       <div class="navbar__tools">
         <ul class="navbar__tools__container">
-          <li class="navbar__tools__item">
-            <a href="#">
+          <li id="add-teacher" class="navbar__tools__item">
+            <a>
               <i class="fa-solid fa-add"></i>
               <span class="navbar__tools__item__tag">
                 <h4>Ajouter un nouvel enseignant</h4>
@@ -54,7 +54,7 @@
           </li>
 
           <li class="navbar__tools__item">
-            <a href="#">
+            <a>
               <i class="fa-solid fa-share"></i>
               <span class="navbar__tools__item__tag">
                 <h4>Partager les plannings</h4>
@@ -67,7 +67,7 @@
           </li>
 
           <li class="navbar__tools__item">
-            <a href="#">
+            <a>
               <i class="fa-solid fa-list"></i>
               <span class="navbar__tools__item__tag">
                 <h4>Tous les enseignants</h4>
@@ -85,7 +85,7 @@
       <div class="navbar__options">
         <ul class="navbar__options__container">
           <li class="navbar__options__item">
-            <a href="#">
+            <a>
               <i class="fa-solid fa-user"></i>
               <span class="navbar__options__item__tag">
                 <h4>Mon Compte</h4>
@@ -94,8 +94,8 @@
             </a>
           </li>
 
-          <li class="navbar__options__item">
-            <a href="#">
+          <li id="add-settings" class="navbar__options__item">
+            <a>
               <i class="fa-solid fa-wrench"></i>
               <span class="navbar__options__item__tag">
                 <h4>Paramètres</h4>
@@ -107,7 +107,7 @@
             </a>
           </li>
           <li class="navbar__options__item">
-            <a href="#">
+            <a>
               <i class="fa-solid fa-comment"></i>
               <span class="navbar__options__item__tag">
                 <h4>Laisser un avis</h4>
@@ -122,7 +122,7 @@
       </div>
     </nav>
 
-    <!-- popups -->
+    <!-- pages -->
     <div id="new-teacher" class="popup-page hidden">
       <div class="popup-page__container">
         <header class="popup-page__container__header">
@@ -132,72 +132,102 @@
           </a>
         </header>
 
-        <form action="" id="infos-teacher">
-          <div class="infos-teacher__left">
-            <h3>Identification de l'enseignant</h3>
-            <div class="infos-teacher__left__item">
-              <label for="gender">Genre :</label>
-              <select name="gender" id="gender">
-                <option value="male">Homme</option>
-                <option value="female">Femme</option>
-              </select>
+        <form id="infos-teacher">
+          <div class="infos-teacher__container">
+            <div class="infos-teacher__container__identification">
+              <h3>Identification de l'enseignant</h3>
+              <ul>
+                <li class="infos-teacher__container__identification__item">
+                  <label for="gender">Genre</label>
+                  <select name="gender" id="gender">
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                  </select>
+                </li>
+
+                <li class="infos-teacher__container__identification__item">
+                  <label for="first-name">Prénoms</label>
+                  <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    placeholder="(ex: Jean)"
+                    required
+                  />
+                </li>
+
+                <li class="infos-teacher__container__identification__item">
+                  <label for="last-name">Nom</label>
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    placeholder="(ex: Ndiaye)"
+                    required
+                  />
+                </li>
+
+                <li class="infos-teacher__container__identification__item">
+                  <label for="phone">Numéro de téléphone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    pattern="^(+221|00221|221|77|78|76|75|70)[0-9]{8}$"
+                    placeholder=" (ex: 77 123 45 67)"
+                  />
+                </li>
+
+                <li class="infos-teacher__container__identification__item">
+                  <label for="email">Adresse email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="(ex: jeanfall24@gmail.com)"
+                  />
+                </li>
+              </ul>
             </div>
 
-            <div>
-              <label for="last-name">Nom : </label>
-              <input
-                type="text"
-                id="last-name"
-                placeholder="Saisir  le nom de famille "
-                required
-              />
+            <div class="infos-teacher__container__courses">
+              <h3>Matières enseignées</h3>
+              <ul>
+                <li class="infos-teacher__container__courses__item">
+                  <label for="subject1">Matières enseignées 1</label>
+                  <select name="subject1" id="subject1"></select>
+                </li>
+
+                <li class="infos-teacher__container__courses__item">
+                  <label for="subject2">Matières enseignées 2</label>
+                  <select name="subject2" id="subject2"></select>
+                </li>
+              </ul>
             </div>
 
-            <div>
-              <label for="first-name">Prénoms : </label>
-              <input
-                type="text"
-                id="first-name"
-                placeholder="Saisir les prénoms"
-                required
-              />
+            <div class="infos-teacher__container__classroom">
+              <h3>Niveaux enseignés</h3>
+              <ul></ul>
             </div>
 
-            <div>
-              <label for="email">Email: </label>
-              <input type="email" id="email" placeholder="Saisir l'email " />
-            </div>
-
-            <div>
-              <label for="phone">N° WhatsApp : </label>
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Saisir le numéro WhatsApp "
-              />
+            <div class="infos-teacher__container__availability">
+              <h3>Disponibitilité de la semaine</h3>
             </div>
           </div>
 
-          <div class="infos-teacher__right">
-            <h3>Information pédagogique</h3>
-            <div>
-              <label for="subject1">Matière dispensée 1</label>
-              <select name="" id="subject1"></select>
-            </div>
-
-            <div>
-              <label for="subject2">Matière dispensée 2</label>
-              <select name="" id="subject2"></select>
-            </div>
-
-            <h3>Niveau scolaire des cours</h3>
-            <div id="level-courses"></div>
-          </div>
-
-          <div class="infos-teacher__disponibility">
-            <h3>Disponibilité de l'enseignant</h3>
-          </div>
+          <!-- <button type="submit">Ajouter le nouvel enseignant</button> -->
         </form>
+      </div>
+    </div>
+
+    <div id="settings" class="popup-page hidden">
+      <div class="popup-page__container">
+        <header class="popup-page__container__header">
+          <h2>Paramètres</h2>
+          <a class="popup-page__container__header__close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </header>
       </div>
     </div>
 

@@ -1,35 +1,72 @@
-form {
-  border: solid red;
-  padding: $padding;
+form#infos-teacher {
+  // border: solid;
+  @include flex(column, center, center);
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: $gap-spacing;
+  .infos-teacher__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap-spacing;
+    height: clamp(100px, fit-content, 550px);
 
-  & > * {
-    border: solid;
-    height: fit-content;
-  }
+    overflow-y: auto;
 
-  .infos-teacher__left
-  /* .infos-teacher__right, */
-  /* .infos-teacher__disponibility */ {
-    & > div {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+
+    & > * {
+      border: transparent thin solid;
+      padding: $padding;
+      // border: solid red;
+
+      & > * {
+        // border: solid green;
+        display: grid;
+        gap: $gap-spacing;
+      }
+    }
+
+    .infos-teacher__container__identification__item,
+    .infos-teacher__container__courses__item {
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        text-align: center;
+        border: none;
+        width: 100%;
+        height: 2rem;
+      }
+
+      input:focus {
+        outline: solid $c-primary-color thin;
+      }
+    }
+
+    .infos-teacher__container__classroom ul {
       display: grid;
-      gap: $gap-spacing;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-      border: solid red;
+    .infos-teacher__container__availability {
+      grid-column: 1/-1;
     }
   }
 
-  .infos-teacher__left {
-    input {
-      width: 34ch;
-      height: 1rem;
+  button[type="submit"] {
+    border: transparent;
+    grid-column: 1/-1;
+    height: 3rem;
+    padding: $padding;
+    line-height: 1rem;
+    @include flex(row, center, center);
+
+    &:hover {
+      background-color: $c-primary-color;
+      color: white;
     }
-  }
-  .infos-teacher__disponibility {
-    grid-column: 1 / -1;
   }
 }

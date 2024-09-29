@@ -40,6 +40,8 @@ $radius: 5px;
   list-style: none;
   text-decoration: none;
 
+  user-select: none;
+
   border-radius: $radius;
 }
 
@@ -140,11 +142,16 @@ button {
 
   border: solid $c-primary-color thin;
   filter: drop-shadow(0 0 1000px);
+  transition: all 0.34s ease-in-out;
 
-  height: 89dvh;
-  width: 89dvw;
+  height: clamp(400px, fit-content, 1920px);
+  width: clamp(400px, 89dvw, 1920px);
+
+  user-select: none;
 
   overflow-y: auto;
+  scrollbar-color: $c-primary-color $c-white-process;
+  scrollbar-width: thin;
 
   &__container {
     padding: $padding;
