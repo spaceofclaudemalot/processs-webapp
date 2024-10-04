@@ -1,72 +1,63 @@
-form#infos-teacher {
-  // border: solid;
-  @include flex(column, center, center);
+form {
+  padding: $padding;
 
-  .infos-teacher__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $gap-spacing;
-    height: clamp(100px, fit-content, 550px);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: $c-primary-color $c-white-process;
+}
 
-    overflow-y: auto;
+.infos-teacher__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap-spacing;
+}
 
-    scrollbar-gutter: stable;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
+.infos-teacher__container__identification__item,
+.infos-teacher__container__courses__item,
+.infos-school__container__identification__item {
+  @include flex(row, center, space-between);
 
-    & > * {
-      border: transparent thin solid;
-      padding: $padding;
-      // border: solid red;
+  margin: 1rem;
 
-      & > * {
-        // border: solid green;
-        display: grid;
-        gap: $gap-spacing;
-      }
-    }
-
-    .infos-teacher__container__identification__item,
-    .infos-teacher__container__courses__item {
-      label {
-        display: block;
-        font-weight: bold;
-      }
-
-      input,
-      select {
-        text-align: center;
-        border: none;
-        width: 100%;
-        height: 2rem;
-      }
-
-      input:focus {
-        outline: solid $c-primary-color thin;
-      }
-    }
-
-    .infos-teacher__container__classroom ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .infos-teacher__container__availability {
-      grid-column: 1/-1;
-    }
+  label {
+    // border: solid red;
+    width: 13ch;
   }
 
-  button[type="submit"] {
-    border: transparent;
-    grid-column: 1/-1;
-    height: 3rem;
-    padding: $padding;
-    line-height: 1rem;
-    @include flex(row, center, center);
+  input {
+    height: 2rem;
+    text-align: center;
+    border: none;
+    width: 34ch;
+  }
 
-    &:hover {
-      background-color: $c-primary-color;
-      color: white;
+  select {
+    border: none;
+    height: 2rem;
+    text-align: center;
+    width: 34ch;
+  }
+
+  input,
+  select {
+    &:focus {
+      outline: none;
+    }
+
+    &:valid {
+      outline: $c-primary-color solid thin;
+    }
+
+    &:invalid {
+      outline: $c-alert-color solid thin;
     }
   }
+}
+
+.infos-school__container__identification__item {
+  @include flex(row, center, flex-start);
+}
+
+.infos-teacher__container__availability {
+  grid-column: 1/-1;
 }

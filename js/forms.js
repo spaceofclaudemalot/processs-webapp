@@ -32,6 +32,7 @@ const levels = [
   "Premiere G",
   "Premiere L'1",
   "Premiere L2",
+  "Premiere S1",
   "Premiere S2",
   "Terminale G",
   "Terminale L'1",
@@ -40,10 +41,45 @@ const levels = [
   "Terminale S2",
 ];
 
-forms.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log("form submitted");
-});
+// const hoursPerSubject = {};
+// levels.forEach((level) => {
+//   hoursPerSubject[level] = {};
+//   subjects.forEach((subject) => {
+//     hoursPerSubject[level][subject] = 0;
+//   });
+// });
+
+// const hoursByLevel = {
+//   "6ème": {
+//     Français: 0,
+//     Anglais: 0,
+//     Espagnol: 0,
+//     Maths: 0,
+//     PC: 0,
+//     SVT: 0,
+//     HistoireGéographie: 0,
+//     InstructionCivique: 0,
+//     Philosophie: 0,
+//     Économie: 0,
+//     EPS: 0,
+//     Dessin: 0,
+//     Informatique: 0,
+//     Musique: 0,
+//     Catéchèse: 0,
+//     Morale: 0,
+//     Latin: 0,
+//     DéveloppementPersonnel: 0,
+//   },
+
+// };
+
+// Object.keys(hoursByLevel).forEach((level) => {
+//   Object.keys(hoursByLevel[level]).forEach((subject) => {
+//     hoursPerSubject[level][subject] = hoursByLevel[level][subject];
+//   });
+// });
+
+// console.log(hoursByLevel);
 
 const selectHTML = (subjects) =>
   `<option value="">Choisir une matière</option>${subjects
@@ -58,8 +94,7 @@ document.querySelector(".infos-teacher__container__classroom > ul").innerHTML =
   levels
     .map(
       (level) =>
-        `<li>
-        
+        `<li class="infos-teacher__container__classroom__item">
             <input
               type="checkbox"
               name="${level}" 
@@ -67,7 +102,23 @@ document.querySelector(".infos-teacher__container__classroom > ul").innerHTML =
               value="${level}" />
 
             <label for="${level}">${level}</label>
-        
         </li>`
     )
     .join("");
+
+//++++++++++++++++++++++++
+// Form in settings page
+//++++++++++++++++++++++++
+const infosSchool = document.getElementById("infos-school");
+const headerGreetings = document.querySelector(".header__greetings");
+
+if (window.localStorage.schoolNameStorage) {
+  headerGreetings.textContent = window.localStorage.schoolNameStorage;
+}
+
+infosSchool.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const schoolNameValue = document.getElementById("school-name").value;
+  headerGreetings.textContent = schoolNameValue;
+  window.localStorage.schoolNameStorage = schoolNameValue;
+});

@@ -130,6 +130,15 @@ button {
   }
 }
 
+.header__greetings {
+  // text-align: right;
+  font-family: $f-processs;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: grey;
+  // filter: opacity(0.55);
+}
+
 .popup-page {
   cursor: auto;
 
@@ -157,7 +166,7 @@ button {
     padding: $padding;
 
     &__header {
-      @include flex(row, center, center);
+      @include flex(row, center, space-between);
 
       &__close {
         font-size: 2rem;
@@ -237,4 +246,8 @@ button {
 
 .visible {
   display: block;
+
+  &.popup-page ~ * {
+    filter: opacity(0.55);
+  }
 }

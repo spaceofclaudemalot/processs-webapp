@@ -2,7 +2,9 @@
   position: absolute;
   top: 1dvh;
   left: 1dvw;
-  width: 89%;
+  width: fit-content;
+
+  @include flex(row, center, center);
 
   &__logo {
     font-family: $f-processs;

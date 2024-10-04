@@ -22,6 +22,8 @@
       <div class="header__logo">
         <a href="">Processs</a>
       </div>
+
+      <div class="header__greetings">x...x</div>
     </header>
 
     <nav class="navbar">
@@ -162,7 +164,7 @@
                     type="text"
                     name="last-name"
                     id="last-name"
-                    placeholder="(ex: Ndiaye)"
+                    placeholder="(ex: Fofana)"
                     required
                   />
                 </li>
@@ -184,7 +186,8 @@
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="(ex: jeanfall24@gmail.com)"
+                    placeholder="(ex: jeanfofana24@gmail.com)"
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                   />
                 </li>
               </ul>
@@ -211,7 +214,7 @@
             </div>
 
             <div class="infos-teacher__container__availability">
-              <h3>Disponibitilité de la semaine</h3>
+              <h3>Disponibilité de la semaine</h3>
             </div>
           </div>
 
@@ -228,8 +231,32 @@
             <i class="fa-solid fa-xmark"></i>
           </a>
         </header>
+
+        <form id="infos-school">
+          <div class="infos-school__container">
+            <div class="infos-school__container__identification">
+              <h3>Identification de l'école</h3>
+              <ul>
+                <li class="infos-school__container__identification__item">
+                  <label for="school-name">Nom de l'école</label>
+                  <input
+                    type="text"
+                    name="school-name"
+                    id="school-name"
+                    placeholder="(ex: ESMT)"
+                  />
+                </li>
+              </ul>
+
+              <div class="infos-school__container__planning">
+                <h3>Planning de cours de l'établissement scolaire</h3>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+    <!-- End pages -->
 
     <main id="planning">
       <div class="planning__container">

@@ -97,6 +97,13 @@ button {
   background-color: rgb(149, 9, 82);
 }
 
+.header__greetings {
+  font-family: "newForest-italic", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: grey;
+}
+
 .popup-page {
   cursor: auto;
   position: absolute;
@@ -124,7 +131,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 .popup-page__container__header__close {
@@ -196,6 +203,9 @@ button {
 .visible {
   display: block;
 }
+.visible.popup-page ~ * {
+  filter: opacity(0.55);
+}
 
 body {
   display: flex;
@@ -230,7 +240,13 @@ body aside {
   position: absolute;
   top: 1dvh;
   left: 1dvw;
-  width: 89%;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 .header__logo {
   font-family: "newForest-italic", serif;
@@ -305,72 +321,85 @@ body aside {
   max-width: 75ch;
 }
 
-form#infos-teacher {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+form {
+  padding: 13px 8px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: teal rgb(245, 245, 245);
 }
-form#infos-teacher .infos-teacher__container {
+
+.infos-teacher__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  height: clamp(100px, -moz-fit-content, 550px);
-  height: clamp(100px, fit-content, 550px);
-  overflow-y: auto;
-  scrollbar-gutter: stable;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
 }
-form#infos-teacher .infos-teacher__container > * {
-  border: transparent thin solid;
-  padding: 13px 8px;
-}
-form#infos-teacher .infos-teacher__container > * > * {
-  display: grid;
-  gap: 1rem;
-}
-form#infos-teacher .infos-teacher__container .infos-teacher__container__identification__item label,
-form#infos-teacher .infos-teacher__container .infos-teacher__container__courses__item label {
-  display: block;
-  font-weight: bold;
-}
-form#infos-teacher .infos-teacher__container .infos-teacher__container__identification__item input,
-form#infos-teacher .infos-teacher__container .infos-teacher__container__identification__item select,
-form#infos-teacher .infos-teacher__container .infos-teacher__container__courses__item input,
-form#infos-teacher .infos-teacher__container .infos-teacher__container__courses__item select {
-  text-align: center;
-  border: none;
-  width: 100%;
-  height: 2rem;
-}
-form#infos-teacher .infos-teacher__container .infos-teacher__container__identification__item input:focus,
-form#infos-teacher .infos-teacher__container .infos-teacher__container__courses__item input:focus {
-  outline: solid teal thin;
-}
-form#infos-teacher .infos-teacher__container .infos-teacher__container__classroom ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-form#infos-teacher .infos-teacher__container .infos-teacher__container__availability {
-  grid-column: 1/-1;
-}
-form#infos-teacher button[type=submit] {
-  border: transparent;
-  grid-column: 1/-1;
-  height: 3rem;
-  padding: 13px 8px;
-  line-height: 1rem;
+
+.infos-teacher__container__identification__item,
+.infos-teacher__container__courses__item,
+.infos-school__container__identification__item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem;
+}
+.infos-teacher__container__identification__item label,
+.infos-teacher__container__courses__item label,
+.infos-school__container__identification__item label {
+  width: 13ch;
+}
+.infos-teacher__container__identification__item input,
+.infos-teacher__container__courses__item input,
+.infos-school__container__identification__item input {
+  height: 2rem;
+  text-align: center;
+  border: none;
+  width: 34ch;
+}
+.infos-teacher__container__identification__item select,
+.infos-teacher__container__courses__item select,
+.infos-school__container__identification__item select {
+  border: none;
+  height: 2rem;
+  text-align: center;
+  width: 34ch;
+}
+.infos-teacher__container__identification__item input:focus,
+.infos-teacher__container__identification__item select:focus,
+.infos-teacher__container__courses__item input:focus,
+.infos-teacher__container__courses__item select:focus,
+.infos-school__container__identification__item input:focus,
+.infos-school__container__identification__item select:focus {
+  outline: none;
+}
+.infos-teacher__container__identification__item input:valid,
+.infos-teacher__container__identification__item select:valid,
+.infos-teacher__container__courses__item input:valid,
+.infos-teacher__container__courses__item select:valid,
+.infos-school__container__identification__item input:valid,
+.infos-school__container__identification__item select:valid {
+  outline: teal solid thin;
+}
+.infos-teacher__container__identification__item input:invalid,
+.infos-teacher__container__identification__item select:invalid,
+.infos-teacher__container__courses__item input:invalid,
+.infos-teacher__container__courses__item select:invalid,
+.infos-school__container__identification__item input:invalid,
+.infos-school__container__identification__item select:invalid {
+  outline: rgb(149, 9, 82) solid thin;
+}
+
+.infos-school__container__identification__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
-form#infos-teacher button[type=submit]:hover {
-  background-color: teal;
-  color: white;
+
+.infos-teacher__container__availability {
+  grid-column: 1/-1;
 }
 
 #planning {
