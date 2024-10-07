@@ -26,15 +26,15 @@ const levels = [
   "5ème",
   "4ème",
   "3ème",
-  "Seconde G",
+  // "Seconde G",
   "Seconde L",
   "Seconde S",
-  "Premiere G",
+  // "Premiere G",
   "Premiere L'1",
   "Premiere L2",
   "Premiere S1",
   "Premiere S2",
-  "Terminale G",
+  // "Terminale G",
   "Terminale L'1",
   "Terminale L2",
   "Terminale S1",
@@ -89,6 +89,18 @@ const selectHTML = (subjects) =>
 
 document.getElementById("subject1").innerHTML = selectHTML(subjects);
 document.getElementById("subject2").innerHTML = selectHTML(subjects);
+
+document.getElementById("subject1").addEventListener("change", (e) => {
+  const selectedValue = e.target.value;
+  const subject2Options = document.getElementById("subject2").options;
+  Array.from(subject2Options).forEach((option) => {
+    if (option.value === selectedValue) {
+      option.disabled = true;
+    } else {
+      option.disabled = false;
+    }
+  });
+});
 
 document.querySelector(".infos-teacher__container__classroom > ul").innerHTML =
   levels
